@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/account")
 public class AccountController {
 	
-
+	/**
+	 * 127.0.0.1:8080/account/login
+	 */
 	@RequestMapping("/login")
 	public String loginPage() {
 		return "indexSimple";
