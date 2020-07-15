@@ -1,154 +1,123 @@
 <!-- 模态框（Modal） -->
-<div th:fragment="formAdd" class="modal fade" id="formAddModal" tabindex="-1"
-	role="dialog" aria-labelledby="userAddLabel" aria-hidden="true">
+<div th:fragment="formAdd" class="modal fade" id="formAddModal"
+	tabindex="-1" role="dialog" aria-labelledby="formAddLabel"
+	aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<!-- 头部 -->
 			<div class="modal-header">
-				<h4 class="modal-title" id="userAddLabel"
+				<h4 class="modal-title" id="formAddLabel"
 					style="font-size: 18px; font-weight: 500;">订单添加</h4>
 				<button type="button" class="close" data-dismiss="modal"
 					aria-hidden="true">&times;</button>
 			</div>
-			
-			<!-- <div class="modal-body">
-				<form class="form-horizontal">
-					<div class="form-group row">
-						<label class="control-label col-md-3">User Name</label>
-						<div class="col-md-8">
-							<input id="userNameForAddPage" name="userName" class="form-control" 
-								type="text" placeholder="Enter user name">
+
+			<div class="content">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card">
+								<div class="card-header card-header-danger">
+									<h4 class="card-title" style="text-align: center;">采购订单</h4>
+									<p class="card-category" style="text-align: center;">完善本次订单详情</p>
+								</div>
+								<div class="card-body">
+
+									<form>
+										<div class="row">
+											<div class="col-md-4">
+												<div class="form-group">
+													<label class="bmd-label-floating">订单编号</label>
+													<!-- <input type="text" class="form-control" disabled>  disabled表示不可修改 -->
+													<input type="text" class="form-control"
+														id="purchaseIdForAddPage">
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="form-group">
+													<label class="bmd-label-floating">车系</label> <input
+														type="text" class="form-control"
+														id="productNameForAddPage">
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="form-group">
+													<label class="bmd-label-floating">类型</label> <input
+														type="email" class="form-control" id="typeForAddPage">
+												</div>
+											</div>
+										</div>
+
+										<div class="row">
+											<div class="col-md-4">
+												<div class="form-group">
+													<label class="bmd-label-floating">购买数量</label> <input
+														type="text" class="form-control"
+														id="purchaseNumForAddPage">
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="form-group">
+													<label class="bmd-label-floating">单价</label> <input
+														type="text" class="form-control"
+														id="productPriceForAddPage">
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="form-group">
+													<label class="bmd-label-floating">总价</label> <input
+														type="text" class="form-control"
+														id="purchasePriceForAddPage">
+												</div>
+											</div>
+										</div>
+
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="bmd-label-floating">购买用户姓名</label> <input
+														type="text" class="form-control" id="userNameForAddPage">
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="bmd-label-floating">支付时间</label> <input
+														type="text" class="form-control" id="applyTimeForAddPage">
+												</div>
+											</div>
+										</div>
+
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="bmd-label-floating">车辆接收状态</label> <input
+														type="text" class="form-control"
+														id="receiveConditionForAddPage">
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="bmd-label-floating">订单完成时间</label> <input
+														type="text" class="form-control" id="finishTimeForAddPage">
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="form-group row">
-						<label class="control-label col-md-3">Password</label>
-						<div class="col-md-8">
-							<input id="passwordForAddPage" name="password" class="form-control" 
-								type="password" placeholder="Enter user name">
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="control-label col-md-3">Roles</label>
-						<div class="col-md-8" id="rolesForAddPage" name="roles"></div>
-					</div>
-				</form>
-			</div> -->
-			      <div class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header card-header-danger">
-                  <h4 class="card-title" style="text-align: center;">采购订单</h4>
-                  <p class="card-category" style="text-align: center;">完善本次订单详情</p>
-                </div>
-                <div class="card-body">
-                  
-                  <form>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">订单编号</label>
-                          <!-- <input type="text" class="form-control" disabled>  disabled表示不可修改 -->
-                          <input type="text" class="form-control" id="purchaseIdForAddPage">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">车系</label>
-                          <input type="text" class="form-control" id="productNameForAddPage">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">类型</label>
-                          <input type="email" class="form-control"  id="typeForAddPage">
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">购买数量</label>
-                          <input type="text" class="form-control"  id="purchaseNumForAddPage">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">单价</label>
-                          <input type="text" class="form-control" id="productPriceForAddPage">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">总价</label>
-                          <input type="text" class="form-control" id="purchasePriceForAddPage">
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">购买用户姓名</label>
-                          <input type="text" class="form-control" id="userNameForAddPage">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">支付时间</label>
-                          <input type="text" class="form-control" id="applyTimeForAddPage">
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">车辆接收状态</label>
-                          <input type="text" class="form-control" id="receiveConditionForAddPage">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">订单完成时间</label>
-                          <input type="text" class="form-control" id="finishTimeForAddPage">
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <!-- <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label>About Me</label>
-                          <div class="form-group">
-                            <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                            <textarea class="form-control" rows="5"></textarea>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
-                    <div class="clearfix"></div> -->
-                  </form>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-			
+				</div>
+			</div>
+
 			<!-- 底部 -->
 			<div class="modal-footer">
 				<!-- data-dismiss="modal"关闭模态框 -->
-				<a class="btn btn-danger" href="#" data-dismiss="modal">
-					<span class="material-icons">perm_scan_wifi</span>&nbsp;&nbsp;取消
+				<a class="btn btn-danger" href="#" data-dismiss="modal"> 
+				<span class="material-icons">perm_scan_wifi</span>&nbsp;&nbsp;取消
 				</a>
-				<button id="formAddBtn" data-dismiss="modal" 
-					class="btn btn-success" type="button">
+				<button id="formAddBtn" data-dismiss="modal" class="btn btn-success"
+					type="button">
 					<span class="material-icons">backup</span>&nbsp;&nbsp;提交
 				</button>
 			</div>

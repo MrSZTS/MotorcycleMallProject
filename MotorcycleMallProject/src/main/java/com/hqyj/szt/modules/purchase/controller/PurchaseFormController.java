@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,7 +22,16 @@ public class PurchaseFormController {
 
 	@Autowired
 	private FormService formservice;
-		
+	
+	/**
+	 * 127.0.0.1:8080/purchases/form/2020
+	 */
+	@RequestMapping(value = "/form/{purchaseId}")
+	public Purchase getPurchaseFormByPurchaseId(@PathVariable String purchaseId) {
+		return formservice.getPurchaseFormByPurchaseId(purchaseId);
+	}
+	
+	
 	/**
 	 * 查询所有订单
 	 * 127.0.0.1:8080/purchases/forms
@@ -43,7 +53,7 @@ public class PurchaseFormController {
 	
 	/**
 	 * 删除订单
-	 * 127.0.0.1/purchases/form/8
+	 * 127.0.0.1:8080/purchases/form/8
 	 */
 	@DeleteMapping(value = "/form/{purchaseId}")
 	//@RequiresPermissions(value = {"/purchases/form"},logical = Logical.OR)//or表示满足其中一个条件即可，还有AND
@@ -51,6 +61,19 @@ public class PurchaseFormController {
 		return formservice.deletePurchaseForm(purchaseId);
 	}
 	
+	/**
+	 * 编辑订单
+	 * 127.0.0.1:8080/purchases/form
+	 */
+	@PutMapping(value = "/form",consumes = "application/json")
+	public Result<Purchase> updatePurchaseForm(@RequestBody Purchase purchase) {
+		return formservice.updatePurchaseForm(purchase);
+	}
+	
+//	@PutMapping(value = "/form",consumes = "application/json") 
+//	public Result<Purchase> updatePurchaseForm(@RequestBody Purchase purchase) {
+//		return formservice.editPurchaseForm(purchase);
+//	}
 	
 	
 }

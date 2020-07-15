@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.hqyj.szt.modules.common.vo.SearchVo;
 import com.hqyj.szt.modules.purchase.entity.Purchase;
@@ -42,8 +43,13 @@ public interface FormDao {
 	void insertPurchaseForm(Purchase purchase);
 	
 	//订单删除
-	//删除
 	@Delete("delete from purchase where purchase_id = #{purchaseId}")
 	void deletePurchaseForm(String purchaseId);
+	
+	//订单修改
+	@Update("update purchase set product_name = #{productName},type = #{type},purchase_num = #{purchaseNum},product_price = #{productPrice},"
+	+"purchase_price = #{purchasePrice},user_name = #{userName},apply_time = #{applyTime},received_condition = #{receivedCondition},finish_time = #{finishTime}"
+			+" where purchase_id = #{purchaseId}")
+	void updatePurchaseForm(Purchase purchase);
 	
 }

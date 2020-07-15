@@ -1,6 +1,6 @@
 package com.hqyj.szt.modules.purchase.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -16,7 +16,7 @@ public class Purchase {
 	private double purchasePrice;
 	private String userName;
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-//	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	//@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date applyTime;
 	private String receivedCondition;
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")

@@ -19,4 +19,8 @@ public interface FormService {
 	//删除订单根据订单号
 	Result<Object> deletePurchaseForm(String purchaseId);
 	
+	//修改订单信息
+	//Result<Purchase> editPurchaseForm(Purchase purchase);
+	Result<Purchase> updatePurchaseForm(Purchase purchase);
+	
 }
